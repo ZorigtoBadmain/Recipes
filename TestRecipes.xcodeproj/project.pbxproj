@@ -13,6 +13,16 @@
 		35746C9B25FBB4ED00B168BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35746C9925FBB4ED00B168BD /* Main.storyboard */; };
 		35746C9D25FBB4F300B168BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35746C9C25FBB4F300B168BD /* Assets.xcassets */; };
 		35746CA025FBB4F300B168BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35746C9E25FBB4F300B168BD /* LaunchScreen.storyboard */; };
+		35746CB125FBB5D700B168BD /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35746CB025FBB5D700B168BD /* Network.swift */; };
+		35746CB425FBB5F400B168BD /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35746CB325FBB5F400B168BD /* Recipe.swift */; };
+		35746CB825FBB73400B168BD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35746CB725FBB73400B168BD /* MainViewModel.swift */; };
+		35746CBE25FBBBBE00B168BD /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35746CBC25FBBBBE00B168BD /* RecipeCell.swift */; };
+		35746CBF25FBBBBE00B168BD /* RecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35746CBD25FBBBBE00B168BD /* RecipeCell.xib */; };
+		35746CC325FC53CE00B168BD /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35746CC225FC53CD00B168BD /* Router.swift */; };
+		35746CC625FC53FA00B168BD /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35746CC525FC53FA00B168BD /* DetailController.swift */; };
+		35746CC925FC543B00B168BD /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35746CC825FC543B00B168BD /* DetailCell.swift */; };
+		35746CCD25FC55FE00B168BD /* LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35746CCC25FC55FE00B168BD /* LoadImage.swift */; };
+		35746CD025FC567A00B168BD /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35746CCF25FC567A00B168BD /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +34,16 @@
 		35746C9C25FBB4F300B168BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35746C9F25FBB4F300B168BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35746CA125FBB4F300B168BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35746CB025FBB5D700B168BD /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		35746CB325FBB5F400B168BD /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		35746CB725FBB73400B168BD /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		35746CBC25FBBBBE00B168BD /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
+		35746CBD25FBBBBE00B168BD /* RecipeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCell.xib; sourceTree = "<group>"; };
+		35746CC225FC53CD00B168BD /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		35746CC525FC53FA00B168BD /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
+		35746CC825FC543B00B168BD /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		35746CCC25FC55FE00B168BD /* LoadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImage.swift; sourceTree = "<group>"; };
+		35746CCF25FC567A00B168BD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +76,97 @@
 		35746C9225FBB4ED00B168BD /* TestRecipes */ = {
 			isa = PBXGroup;
 			children = (
+				35746CCB25FC55EF00B168BD /* Core */,
+				35746CB625FBB61D00B168BD /* ViewModel */,
+				35746CAD25FBB59B00B168BD /* Controllers */,
+				35746CAC25FBB58D00B168BD /* Router */,
+				35746CAB25FBB57B00B168BD /* Modul */,
+				35746CAA25FBB56300B168BD /* View */,
+				35746CA925FBB52D00B168BD /* Resurces */,
+				35746CA825FBB51400B168BD /* Application */,
+			);
+			path = TestRecipes;
+			sourceTree = "<group>";
+		};
+		35746CA825FBB51400B168BD /* Application */ = {
+			isa = PBXGroup;
+			children = (
 				35746C9325FBB4ED00B168BD /* AppDelegate.swift */,
 				35746C9525FBB4ED00B168BD /* SceneDelegate.swift */,
-				35746C9725FBB4ED00B168BD /* ViewController.swift */,
-				35746C9925FBB4ED00B168BD /* Main.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		35746CA925FBB52D00B168BD /* Resurces */ = {
+			isa = PBXGroup;
+			children = (
 				35746C9C25FBB4F300B168BD /* Assets.xcassets */,
 				35746C9E25FBB4F300B168BD /* LaunchScreen.storyboard */,
 				35746CA125FBB4F300B168BD /* Info.plist */,
 			);
-			path = TestRecipes;
+			path = Resurces;
+			sourceTree = "<group>";
+		};
+		35746CAA25FBB56300B168BD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				35746CBB25FBBB9600B168BD /* Cells */,
+				35746C9925FBB4ED00B168BD /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		35746CAB25FBB57B00B168BD /* Modul */ = {
+			isa = PBXGroup;
+			children = (
+				35746CB025FBB5D700B168BD /* Network.swift */,
+				35746CB325FBB5F400B168BD /* Recipe.swift */,
+			);
+			path = Modul;
+			sourceTree = "<group>";
+		};
+		35746CAC25FBB58D00B168BD /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				35746CC225FC53CD00B168BD /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		35746CAD25FBB59B00B168BD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				35746C9725FBB4ED00B168BD /* ViewController.swift */,
+				35746CC525FC53FA00B168BD /* DetailController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		35746CB625FBB61D00B168BD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				35746CB725FBB73400B168BD /* MainViewModel.swift */,
+				35746CCF25FC567A00B168BD /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		35746CBB25FBBB9600B168BD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				35746CBC25FBBBBE00B168BD /* RecipeCell.swift */,
+				35746CBD25FBBBBE00B168BD /* RecipeCell.xib */,
+				35746CC825FC543B00B168BD /* DetailCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		35746CCB25FC55EF00B168BD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				35746CCC25FC55FE00B168BD /* LoadImage.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +229,7 @@
 				35746CA025FBB4F300B168BD /* LaunchScreen.storyboard in Resources */,
 				35746C9D25FBB4F300B168BD /* Assets.xcassets in Resources */,
 				35746C9B25FBB4ED00B168BD /* Main.storyboard in Resources */,
+				35746CBF25FBBBBE00B168BD /* RecipeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,9 +240,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35746CC925FC543B00B168BD /* DetailCell.swift in Sources */,
+				35746CC325FC53CE00B168BD /* Router.swift in Sources */,
 				35746C9825FBB4ED00B168BD /* ViewController.swift in Sources */,
 				35746C9425FBB4ED00B168BD /* AppDelegate.swift in Sources */,
+				35746CCD25FC55FE00B168BD /* LoadImage.swift in Sources */,
+				35746CB125FBB5D700B168BD /* Network.swift in Sources */,
+				35746CBE25FBBBBE00B168BD /* RecipeCell.swift in Sources */,
+				35746CD025FC567A00B168BD /* DetailViewModel.swift in Sources */,
 				35746C9625FBB4ED00B168BD /* SceneDelegate.swift in Sources */,
+				35746CB425FBB5F400B168BD /* Recipe.swift in Sources */,
+				35746CC625FC53FA00B168BD /* DetailController.swift in Sources */,
+				35746CB825FBB73400B168BD /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +400,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KBWZGWH625;
-				INFOPLIST_FILE = TestRecipes/Info.plist;
+				INFOPLIST_FILE = TestRecipes/Resurces/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +419,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KBWZGWH625;
-				INFOPLIST_FILE = TestRecipes/Info.plist;
+				INFOPLIST_FILE = TestRecipes/Resurces/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
