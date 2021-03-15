@@ -20,7 +20,7 @@ class Router {
     var controller: UIViewController?
     var storyboardID: StoryboardID? = .main
     var controllerID: ControllerID?
-    var detailViewModel = DetailViewModel()
+//    var detailViewModel = DetailViewModel()
     
     required init(_ controller: UIViewController) {
         self.controller = controller
@@ -30,16 +30,11 @@ class Router {
         print("deinit")
     }
     
-    func detail(recipe: Recipe) {
+    func detail(index: Int) {
         storyboardID = .main
         controllerID = .detailController
         let storyboard = UIStoryboard(name: storyboardID!.rawValue, bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: controllerID!.rawValue) as! DetailController
-//        detailViewModel.recipe = recipe
-        vc.nameString = recipe.name
-        vc.descriptionString = recipe.recipeDescription
-        vc.instructionString = recipe.instructions
-        vc.imageArray = recipe.images
     
         let navigation = UINavigationController(rootViewController: vc)
         navigation.modalPresentationStyle = .fullScreen

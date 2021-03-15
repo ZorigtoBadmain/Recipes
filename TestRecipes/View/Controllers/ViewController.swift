@@ -11,7 +11,6 @@ class ViewController: UIViewController {
     
     var tableView: UITableView!
     var mainViewModel = MainViewModel()
-    var detailViewModel = DetailViewModel()
     var router: Router?
 
     override func viewDidLoad() {
@@ -50,16 +49,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "DetailController") as! DetailController
+        vc.detailViewModel = mainViewModel.detailViewModel(index: indexPath.row)
+    
+        let navigation = UINavigationController(rootViewController: vc)
+        navigation.modalPresentationStyle = .fullScreen
+        present(navigation, animated: true, completion: nil)
 
-        if let recipe = mainViewModel.recipe?.recipes[indexPath.row] {
-            router?.detail(recipe: recipe)
-            
-        }
-//        detailViewModel.name = mainViewModel.recipe?.recipes[indexPath.row].name
-        
-
-        
-        
     }
 }
 

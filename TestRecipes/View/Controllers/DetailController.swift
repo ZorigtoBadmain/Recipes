@@ -19,16 +19,15 @@ class DetailController: UIViewController {
     var instructionString: String?
     var descriptionString: String?
     var imageArray: [String] = []
-    var detailViewModel = DetailViewModel()
+    var detailViewModel: DetailViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionConfig()
         
-        name.text = nameString
-        descriptionLabel.text = descriptionString
-        instructionLabel.text = instructionString
-//        name.text = detailViewModel.name
+        name.text = detailViewModel.name
+        descriptionLabel.text = detailViewModel.description
+        instructionLabel.text = detailViewModel.instruction
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(backAction))
     }
@@ -46,8 +45,8 @@ class DetailController: UIViewController {
 
 extension DetailController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        pageControll.numberOfPages = imageArray.count
-        return imageArray.count
+        pageControll.numberOfPages = detailViewModel.imageArray.count
+        return detailViewModel.imageArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -55,7 +54,7 @@ extension DetailController: UICollectionViewDataSource, UICollectionViewDelegate
         let page = Int(collectionView.contentOffset.x/view.bounds.width)
         pageControll.currentPage = Int(page)
         
-        let detailImag = imageArray[indexPath.row]
+        let detailImag = detailViewModel.imageArray[indexPath.row]
         
         cell.detailImage.load(urlString: detailImag)
         

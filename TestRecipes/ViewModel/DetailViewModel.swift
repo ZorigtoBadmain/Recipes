@@ -8,16 +8,16 @@
 import Foundation
 
 class DetailViewModel {
-    var recipe: Recipe?
     
     var name: String!
-    var description: String? {
-        recipe.debugDescription
-    }
-    var instruction: String? {
-        recipe?.instructions
-    }
-    var imageArray: [String]? {
-        recipe?.images
+    var description: String!
+    var instruction: String!
+    var imageArray: [String]!
+    
+    required init(recipe: Recipe) {
+        self.name = recipe.name
+        self.description = recipe.recipeDescription
+        self.instruction = recipe.instructions
+        self.imageArray = recipe.images
     }
 }

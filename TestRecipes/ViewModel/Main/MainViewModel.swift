@@ -11,10 +11,11 @@ import UIKit
 class MainViewModel {
     
     var loadRecipe = LoadRecipe()
-    var recipe: RecipesArray?
+    var recipe: [Recipe] = []
+    var detailviewmodel: DetailViewModel!
     
     var count: Int {
-        return recipe?.recipes.count ?? 0
+        return recipe.count
     }
     
     var name: String?
@@ -22,17 +23,22 @@ class MainViewModel {
     
     public func loadRecipes(complition: @escaping () -> ()) {
         loadRecipe.load { (recipe) in
-            self.recipe = recipe
+            self.recipe = recipe.recipes
             complition()
         }
     }
     
     func nameLoad(index: Int) -> String {
-        return recipe?.recipes[index].name ?? ""
+        return recipe[index].name
     }
     
     func urlStringImage(index: Int) -> String {
-        return recipe?.recipes[index].images.first ?? ""
+        return recipe[index].images.first ?? ""
+    }
+    
+    func detailViewModel(index: Int) -> DetailViewModel {
+        self.detailviewmodel = DetailViewModel(recipe: (recipe[index]))
+        return self.detailviewmodel
     }
 }
 

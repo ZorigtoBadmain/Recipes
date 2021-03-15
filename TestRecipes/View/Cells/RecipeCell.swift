@@ -12,5 +12,4 @@ class RecipeCell: UITableViewCell {
     @IBOutlet weak var imageRecipe: UIImageView!
     @IBOutlet weak var nameRecipe: UILabel!
     
-    
 }
